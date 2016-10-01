@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby "2.3.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
@@ -35,6 +35,45 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-stack_explorer'
+  gem 'pry-byebug'
+
+  gem 'guard-rspec'
+  gem 'terminal-notifier-guard'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
+  # gem 'rack-mini-profiler'
+
+  # Detecting the N+1 problem
+  # Need configure to config/development.rb
+  gem 'bullet'
+
+  gem 'rails_best_practices'
+
+  # Adding annotation to models, facotries, specs
+  # Run at first:
+  # $ bin/rails g annotate:install
+  gem 'annotate'
+
+  # Run at first:
+  # $ bin/rails g rspec:install
+  gem 'rspec-rails'
+  gem 'rspec-collection_matchers'
+  gem 'nyan-cat-formatter'
+  gem 'factory_girl_rails'
+  gem 'database_rewinder'
+  gem 'faker'
+  gem 'timecop'
+  gem 'shoulda-matchers'
+  gem 'rspec-request_describer'
+  gem 'autodoc'
+  gem 'json_spec'
+  gem 'poltergeist'
+  gem 'launchy'
+  gem 'simplecov', :require => false
 end
 
 group :development do
@@ -43,5 +82,7 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-end
 
+  gem 'nokogiri'
+  gem 'html2slim'
+end
