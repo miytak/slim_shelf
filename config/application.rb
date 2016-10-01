@@ -31,5 +31,10 @@ module SlimShelf
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    Amazon::Ecs.options = {
+      associate_tag: ENV['ASSOCIATE_TAG'],
+      AWS_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      AWS_secret_key: ENV['AWS_SECRET_KEY']
+    }
   end
 end
