@@ -1,0 +1,38 @@
+section.content
+  .row
+    .col-md-4
+      .box.box-info
+        .box-header.with-border
+          h3.box-title CD検索
+          
+        = form_tag search_cds_path, method: :get, class: 'form-horizontal'
+          .box-body
+            .form-group
+              = label :artist, 'キーワード', class: 'col-sm-2 control-label'
+              = text_field :search, :keyword, class: 'col-sm-10'
+            .form-group
+              = label :artist, 'アーティスト', class: 'col-sm-2 control-label'
+              = text_field :search, :artist, class: 'col-sm-10'
+            .form-group
+              = label :title, 'タイトル', class: 'col-sm-2 control-label'
+              = text_field :search, :title, class: 'col-sm-10'
+          .box-footer
+            = submit_tag '検索', class: 'btn btn-primary pull-right'
+- if @cds.present?
+  div
+    table.table
+      thead.thead-inverse
+        tr
+          th No
+          th イメージ
+          th アーティスト
+          th タイトル
+          th リリース
+      - @cds.each.with_index(1) do |cd, i|
+        tbody
+          tr
+            td = i
+            td = image_tag cd.jacket_image_url
+            td = cd.artist.name
+            td = cd.title
+            td = cd.release_date.strftime('%F') if cd.release_date

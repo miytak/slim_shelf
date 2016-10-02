@@ -237,6 +237,7 @@ GEM
     rdoc (4.2.2)
       json (~> 1.4)
     require_all (1.3.3)
+    retryable (2.0.4)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -366,6 +367,7 @@ DEPENDENCIES
   pry-stack_explorer
   rails (= 4.2.7)
   rails_best_practices
+  retryable
   rspec-collection_matchers
   rspec-rails
   rspec-request_describer
