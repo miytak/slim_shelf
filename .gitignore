@@ -7,6 +7,11 @@
 # Ignore bundler config.
 /.bundle
 
+# if using bower-rails ignore default bower_components path bower.json files
+!/vendor/assets/bower_components
+*.bowerrc
+bower.json
+
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
